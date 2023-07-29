@@ -30,7 +30,7 @@
 
 
   /* sizes */
-  --nav-width: 7rem;
+  --nav-width: 10rem;
   --webkit-scrollbar-width: 0.7vw;
 }
 
@@ -100,7 +100,7 @@ body::-webkit-scrollbar-thumb:hover {
 /* main */
 main {
   grid-area: main;
-  margin-left: var(--nav-width) !important;
+  margin-left: var(--nav-width);
   padding: 0 1rem;
 }
 
@@ -114,9 +114,13 @@ main {
   align-items: center;
   justify-content: flex-start;
 
-  padding: 1rem;
   height: 100vh;
   width: var(--nav-width);
+}
+.navbar-vertical .logo-container img{
+  object-fit: contain;
+  border: none;
+  border-radius: .5rem;
 }
 .navbar-vertical ul {
   list-style: none;
@@ -124,12 +128,35 @@ main {
   margin: 0;
   display: flex;
   flex-direction: column;
+  align-items: center;
   
   /* space between flex items */
-  justify-content: space-between;
+  /* justify-content: space-between; */
+  justify-content: space-evenly;
   height: 100%;
   
 }
+
+.options-button-container{
+  /* reset the button tag styles to none */
+  background: none;
+  /* background: #7a3a3a2c; */
+  border: none;
+  padding: 0;
+  margin: 1rem 0;
+  height: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.options-button-container .line{
+  width: 2rem;
+  height: .15rem;
+  background-color: var(--accent);
+  border-radius: 0.05rem;
+}
+
 
 a {
   text-decoration: none;
