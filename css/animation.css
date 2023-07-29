@@ -1,0 +1,32 @@
+.s6-animate-accent-to-primary {
+  animation: color-transition 0.5s linear;
+}
+
+/* serpentine: abrupt color transition into the text base color */
+@keyframes color-transition {
+  0% {
+    color: var(--accent);
+  }
+  99% {
+    color: var(--primary);
+  }
+  100% {
+    color: var(--accent);
+  }
+}
+
+::selection{
+  animation: selection-transition 2s infinite;
+}
+/* hueshift the color of the highlighted selection */
+@keyframes selection-transition {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    filter: hue-rotate(90deg);
+  }
+  100% {
+    filter: hue-rotate(0deg);
+  }
+}
