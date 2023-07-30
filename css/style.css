@@ -21,8 +21,8 @@
   /* --accent: #00ff11; */
   --accent-dark: #073f2c;
   /* other */
-  --dark-grey: #181818;
-  --light-grey: #282828;
+  --dark-grey: #0c0c0c;
+  --light-grey: #0c0c0c;
   --dark-green: #24641f;
   --light-green: #789470;
   --dark-teal: #1d7874;
@@ -137,10 +137,20 @@ main {
   
 }
 
+.navbar-vertical a {
+  text-decoration: none;
+  color: var(--light-teal);
+}
+.navbar-vertical a:hover{
+  color: var(--accent);
+}
+.navbar-vertical a:active{
+  color: var(--accent);
+}
+
 .options-button-container{
   /* reset the button tag styles to none */
   background: none;
-  /* background: #7a3a3a2c; */
   border: none;
   padding: 0;
   margin: 1rem 0;
@@ -153,21 +163,21 @@ main {
 .options-button-container .line{
   width: 2rem;
   height: .15rem;
-  background-color: var(--accent);
+  background-color: var(--light-teal);
   border-radius: 0.05rem;
+  transition: .1s;
+}
+.options-button-container:hover .line{
+  background-color: var(--dark-teal) ;
+  width: 2.2rem;
 }
 
-
-a {
-  text-decoration: none;
-  color: var(--accent);
-}
 
 /* headings */
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Astloch', cursive;
   font-weight: normal;
-  color: var(--accent);
+  color: var(--light-teal);
   margin: 0;
   padding: 0;
   /* capitalize */
