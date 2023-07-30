@@ -187,15 +187,63 @@ h1, h2, h3, h4, h5, h6 {
   
 }
 
+/* helper class */
 .text-accent{
   color: var(--accent);
 }
+.bg-accent{
+  color: var(--dark-grey);
+  background-color: var(--accent);
+}
 
+/* main */
 /* margins top and bottom for sections */
 section {
   margin: 1rem 0;
 }
 
+.section-seachbar{
+  /* background-color: #d73131; */
+  padding: 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.searchbar-container{
+  color: var(--light-grey);
+  width: 20rem;
+  /* padding: 1em; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  /* set as parent container */
+  position: relative;
+}
+.searchbar-container .search-icon{
+  position: absolute;
+  left: .6em;
+}
+.searchbar-container input{
+  width: 100%;
+  color: var(--accent);
+  background: var(--secondary);
+  padding: .5em 2em;
+  border: none;
+  border-radius: 25px;
+}
+.searchbar-container input::placeholder{
+  color: var(--light-grey);
+}
+.searchbar-container input:focus{
+  outline: none;
+}
+
+.searchbar-container .badge{
+  position: absolute;
+  right: .6em;
+}
 
 
 
