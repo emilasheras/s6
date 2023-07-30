@@ -22,7 +22,6 @@ function fadeInTextInElement(index, paragraph) {
         let span = $("<span>")
             .text(char)
             .css("display", "inline")
-            // .css("opacity", 1)
             .addClass('s6-animate-accent-to-primary')
             .appendTo(paragraph)
             .hide()
@@ -46,7 +45,6 @@ function runProbability(pct) {
 
     // Check if the random number is less than 2 (2 percent chance)
     if (randomNum < pct) {
-        // Do something here (the action with 2 percent probability)
         console.log("Action executed with 2 percent chance.");
         return true;
     } else {
