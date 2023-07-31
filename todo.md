@@ -1,9 +1,8 @@
 # Projects' to-do list
 ### General
-- [ ] remake the whole thing with Grid and Flexbox
-    - [x] general grid layout
+- [x] remake the layout with GRID
 - [ ] remake with flexbox and Bootstrap 5.x
-    1. [ ] index.html
+    1. [x] index.html
     2. [ ] shop.html
     3. [ ] home.html
     4. [ ] about.html
@@ -11,11 +10,14 @@
     6. [ ] gallery.html
 - [ ] make the whole thing responsive (bs5)
 - [ ] make at least one thing responsive with media queries for the sake of it
-- [ ] upload into a github repo
+- [x] upload into a github repo
     - [ ] make a readme.md that explains the project and intention
 - [ ] make a favicon
 - [ ] make a logo
-- [ ] make a footer
+- [x] make a footer
+- [ ] change the static message into a bs5 toast one
+- [ ] change the default bs5 toast to a custom one
+
 
 ### style.css
 - [x] make the navbar left-sided

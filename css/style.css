@@ -16,7 +16,7 @@
 
   /* colors */
   --primary: #c1af11;
-  --secondary: #4c4c4c;
+  --secondary: #535353;
   --accent: #28c11c;
   /* --accent: #00ff11; */
   --accent-dark: #073f2c;
@@ -24,6 +24,7 @@
   --dark-grey: #0c0c0c;
   --light-grey: #0c0c0c;
   --dark-green: #24641f;
+  --dark-green-2: #269809;
   --light-green: #789470;
   --dark-teal: #1d7874;
   --light-teal: #65e4e8;
@@ -48,7 +49,7 @@ body {
 }
 img, picture {
   max-width: 100%;
-  display: block;
+  /* display: block; */
 }
 
 /* from here on the real styling of the page begins */
@@ -129,17 +130,13 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  
-  /* space between flex items */
-  /* justify-content: space-between; */
   justify-content: space-evenly;
   height: 100%;
-  
 }
 
 .navbar-vertical a {
   font-family: 'Astloch', cursive;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   text-decoration: none;
   color: var(--light-teal);
 }
@@ -187,13 +184,27 @@ h1, h2, h3, h4, h5, h6 {
   
 }
 
-/* helper class */
+/* helper styles */
 .text-accent{
   color: var(--accent);
 }
 .bg-accent{
   color: var(--dark-grey);
   background-color: var(--accent);
+}
+/* the back theme of the page makes the white pictures too bright for the eyes */
+.s6-filter-brightness-50{
+  filter: brightness(0.5);
+  transition: 0.2s;
+}
+.s6-filter-brightness-75{
+  filter: brightness(0.75);
+  transition: 0.2s;
+}
+/* increase brigthness on hover */
+.s6-filter-brightness-50:hover, 
+.s6-filter-brightness-75:hover{
+  filter: brightness(1);
 }
 
 /* main */
@@ -243,6 +254,15 @@ section {
 .searchbar-container .badge{
   position: absolute;
   right: .6em;
+}
+
+
+/* todo: revise this . */
+.s6-btn{
+  background: var(--dark-green-2);
+  color: #000000;
+  font-family: 'IBM 3270', monospace;
+  padding: .1em .2em;
 }
 
 
