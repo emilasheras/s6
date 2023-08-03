@@ -62,3 +62,20 @@ hr {
   }
 }
 
+.navbar-vertical .logo-container img{
+  animation: logo-passive 10s linear infinite;
+  filter: none;
+  transition: filter .2s linear; /* this is to make the logo glow when hovered */
+}
+.navbar-vertical .logo-container img:hover {
+  filter: drop-shadow(0 0 0.5rem var(--accent));
+}
+/* the logo is a rounded circle, make it flip around like a coin */
+@keyframes logo-passive{
+  0% {
+    transform: rotateY(0deg) rotateX(10deg) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateY(360deg) rotateX(10deg) rotateZ(0deg);
+  }
+}

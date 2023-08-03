@@ -33,6 +33,7 @@
   /* sizes */
   --nav-width: 10rem;
   --webkit-scrollbar-width: 0.7vw;
+  --logo-size: 10rem;
 }
 
 /* reset learned from https://gist.github.com/Asjas/4b0736108d56197fce0ec9068145b421 */
@@ -118,10 +119,17 @@ main {
   height: 100vh;
   width: var(--nav-width);
 }
+.navbar-vertical .logo-container{
+  padding: 1rem;
+  width: var(--logo-size);
+  height: var(--logo-size);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .navbar-vertical .logo-container img{
-  object-fit: contain;
-  border: none;
-  border-radius: .5rem;
+  object-fit: cover;
+  border-radius: 50%;
 }
 .navbar-vertical ul {
   list-style: none;
