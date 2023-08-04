@@ -11,7 +11,8 @@
 			crossorigin="anonymous"
 		/>
 		<!-- link the css file in the /css folder -->
-		<link rel="stylesheet" href="../css/style.css" />
+		<link rel="stylesheet" href="./../css/style.css" />
+		<link rel="stylesheet" href="./../css/animation.css" />
 		<title>Gallery</title>
 	</head>
 
@@ -21,18 +22,22 @@
 			<nav class="navbar-vertical">
 				<!-- logo img -->
 				<div class="logo-container">
-					<a href="../index.html">
-						<img src="/assets/images/logo-placeholder.jpg" alt="s6-logo" />
+					<a href="./../index.html">
+						<img
+							src="./../assets/images/sigil-clear.png"
+							alt="s6-logo"
+							class="s6-filter-brightness-75"
+						/>
 					</a>
 				</div>
 				<!-- the actual links -->
 				<ul>
-					<li><a href="../index.html"> Index</a></li>
-					<li><a href="/pages/home.html"> Home</a></li>
-					<li><a href="/pages/gallery.html"> Gallery</a></li>
-					<li><a href="/pages/shop.html"> Shop</a></li>
-					<li><a href="/pages/about.html"> About</a></li>
-					<li><a href="/pages/nexus.html"> Nexus</a></li>
+					<li><a href="./../index.html" class="">Index</a></li>
+					<li><a href="./../pages/home.html" class="">Home</a></li>
+					<li><a href="./../pages/gallery.html" class="">Gallery</a></li>
+					<li><a href="./../pages/shop.html" class="">Shop</a></li>
+					<li><a href="./../pages/about.html" class="">About</a></li>
+					<li><a href="./../pages/nexus.html" class="">Nexus</a></li>
 				</ul>
 				<!-- more options button -->
 				<button class="options-button-container" title="options">
@@ -129,5 +134,9 @@
 			integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
 			crossorigin="anonymous"
 		></script>
+
+		<!-- add custom js -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<script src="./../js/s6.js"></script>
 	</body>
 </html>
