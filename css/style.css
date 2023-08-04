@@ -7,6 +7,10 @@
   font-family: 'Astloch';
   src: url("../assets/fonts/Astloch/Astloch-Regular.ttf") format('truetype');
 }
+@font-face {
+  font-family: 'Inconsolata';
+  src: url("../assets/fonts/Inconsolata/Inconsolata-Regular.ttf");
+}
 
 /* could also add another gothic script font type here on the future:.. */
 
@@ -22,7 +26,7 @@
   --accent-dark: #073f2c;
   /* other */
   --dark-grey: #0c0c0c;
-  --light-grey: #0c0c0c;
+  --light-grey: #313131;
   --dark-green: #24641f;
   --dark-green-2: #269809;
   --light-green: #789470;
@@ -31,9 +35,28 @@
 
 
   /* sizes */
-  --nav-width: 10rem;
+  --nav-width: 14rem;
   --webkit-scrollbar-width: 0.7vw;
   --logo-size: 10rem;
+  /* nav */
+  --nav-link-color: #65e4e8;
+
+
+  /* miscellaneous */
+  /* other possible symbol pairs: † †, « », ‹ ›, [ ], { }, ( ), | |, • •, */
+  --encapsulator-left:  "«";
+  --encapsulator-right: "»";
+  --encapsulator-left:  "[";
+  --encapsulator-right: "]";
+  --encapsulator-left-hover:  "‹";
+  --encapsulator-right-hover: "›";
+  --encapsulator-color: var(--dark-teal);
+
+  /* todo:remove after testing is done */
+  --encapsulator-left:  "[";
+  --encapsulator-right: "]";
+  --encapsulator-left-hover:  "(";
+  --encapsulator-right-hover: ")";
 }
 
 /* reset learned from https://gist.github.com/Asjas/4b0736108d56197fce0ec9068145b421 */
@@ -109,7 +132,7 @@ main {
 /* nav */
 .navbar-vertical {
   grid-area: navbar;
-  background: var(--light-grey);
+  background: var(--dark-grey);
   position: fixed;
   display: flex;
   flex-direction: column;
@@ -118,6 +141,7 @@ main {
 
   height: 100vh;
   width: var(--nav-width);
+  border-right: 1px solid var(--light-grey);
 }
 .navbar-vertical .logo-container{
   padding: 1rem;
@@ -143,10 +167,10 @@ main {
 }
 
 .navbar-vertical a {
-  font-family: 'Astloch', cursive;
+  font-family: "Inconsolata", monospace;
+  color: var(--nav-link-color);
   font-size: 1.8rem;
   text-decoration: none;
-  color: var(--light-teal);
 }
 .navbar-vertical a:hover{
   color: var(--accent);
@@ -187,9 +211,7 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--light-teal);
   margin: 0;
   padding: 0;
-  /* capitalize */
-  text-transform: capitalize;
-  
+  text-transform: capitalize;  
 }
 
 /* helper styles */
@@ -213,6 +235,38 @@ h1, h2, h3, h4, h5, h6 {
 .s6-filter-brightness-50:hover, 
 .s6-filter-brightness-75:hover{
   filter: brightness(1);
+}
+
+.s6-encapsulator{
+  text-transform: uppercase;
+  /* position: relative; */
+
+}
+.s6-encapsulator:before, .s6-encapsulator:after{
+  /* position: absolute; */
+  /* top: 0; */
+  /* left: 0; */
+  transform: rotate(0deg);
+  transition: transform 0.8s;
+  /* color: var(--encapsulator-color); */
+}
+
+.s6-encapsulator:before{
+  content: var(--encapsulator-left);
+  transform: rotate(-25deg);
+}
+.s6-encapsulator:after{
+  content: var(--encapsulator-right);
+  transform: rotate(25deg);
+}
+.s6-encapsulator:hover:before{
+  content: var(--encapsulator-left-hover);
+  transform: rotate(0deg);
+  /* rotate content 180 deg */
+}
+.s6-encapsulator:hover:after{
+  content: var(--encapsulator-right-hover);
+  transform: rotate(0deg);
 }
 
 /* main */
