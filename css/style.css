@@ -46,17 +46,9 @@
   /* other possible symbol pairs: † †, « », ‹ ›, [ ], { }, ( ), | |, • •, */
   --encapsulator-left:  "«";
   --encapsulator-right: "»";
-  --encapsulator-left:  "[";
-  --encapsulator-right: "]";
   --encapsulator-left-hover:  "‹";
   --encapsulator-right-hover: "›";
   --encapsulator-color: var(--dark-teal);
-
-  /* todo:remove after testing is done */
-  --encapsulator-left:  "[";
-  --encapsulator-right: "]";
-  --encapsulator-left-hover:  "(";
-  --encapsulator-right-hover: ")";
 }
 
 /* reset learned from https://gist.github.com/Asjas/4b0736108d56197fce0ec9068145b421 */
@@ -169,7 +161,7 @@ main {
 .navbar-vertical a {
   font-family: "Inconsolata", monospace;
   color: var(--nav-link-color);
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   text-decoration: none;
 }
 .navbar-vertical a:hover{
@@ -239,34 +231,24 @@ h1, h2, h3, h4, h5, h6 {
 
 .s6-encapsulator{
   text-transform: uppercase;
-  /* position: relative; */
-
+  
 }
 .s6-encapsulator:before, .s6-encapsulator:after{
-  /* position: absolute; */
-  /* top: 0; */
-  /* left: 0; */
-  transform: rotate(0deg);
-  transition: transform 0.8s;
-  /* color: var(--encapsulator-color); */
+  transition: content 0.8s;
+  color: var(--encapsulator-color);
 }
 
 .s6-encapsulator:before{
   content: var(--encapsulator-left);
-  transform: rotate(-25deg);
 }
 .s6-encapsulator:after{
   content: var(--encapsulator-right);
-  transform: rotate(25deg);
 }
 .s6-encapsulator:hover:before{
   content: var(--encapsulator-left-hover);
-  transform: rotate(0deg);
-  /* rotate content 180 deg */
 }
 .s6-encapsulator:hover:after{
   content: var(--encapsulator-right-hover);
-  transform: rotate(0deg);
 }
 
 /* main */
