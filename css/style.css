@@ -44,10 +44,10 @@
 
   /* miscellaneous */
   /* other possible symbol pairs: † †, « », ‹ ›, [ ], { }, ( ), | |, • •, */
-  --encapsulator-left:  "«";
-  --encapsulator-right: "»";
-  --encapsulator-left-hover:  "‹";
-  --encapsulator-right-hover: "›";
+  --encapsulator-left:  "‹";
+  --encapsulator-right: "›";
+  --encapsulator-left-hover:  "«";
+  --encapsulator-right-hover: "»";
   --encapsulator-color: var(--dark-teal);
 }
 
@@ -229,13 +229,21 @@ h1, h2, h3, h4, h5, h6 {
   filter: brightness(1);
 }
 
+/* encapsulator without hover effects */
+.s6-encapsulator-double:before{
+  content: var(--encapsulator-left-hover);
+}
+.s6-encapsulator-double:after{
+  content: var(--encapsulator-right-hover);
+}
+
+/* encapsulator with hover effects */
 .s6-encapsulator{
   text-transform: uppercase;
-  
 }
 .s6-encapsulator:before, .s6-encapsulator:after{
   transition: content 0.8s;
-  color: var(--encapsulator-color);
+  /* color: var(--encapsulator-color); */
 }
 
 .s6-encapsulator:before{
