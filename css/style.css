@@ -35,11 +35,14 @@
 
 
   /* sizes */
-  --nav-width: 14rem;
   --webkit-scrollbar-width: 0.7vw;
   --logo-size: 10rem;
   /* nav */
+  --nav-width: 14rem;
+  /* --nav-height:4rem; */
   --nav-link-color: #65e4e8;
+  --nav-bg-color: var(--dark-grey);
+  --nav-bg-color-transparent: #0c0c0c67; /* should be some transparent value */
 
 
   /* miscellaneous */
@@ -118,22 +121,34 @@ body::-webkit-scrollbar-thumb:hover {
 main {
   grid-area: main;
   margin-left: var(--nav-width);
+  margin-bottom: 0;
   padding: 0 1rem;
 }
 
 /* nav */
 .navbar-vertical {
+  /* move to the top z index. this is cause of the layout change for mobile */
+  z-index: 1;
+
+  /* bg color */
+  background: var(--nav-bg-color);
+
+  /* positioning */
   grid-area: navbar;
-  background: var(--dark-grey);
   position: fixed;
   display: flex;
   flex-direction: column;
+
+  /* alignment */
   align-items: center;
   justify-content: flex-start;
 
+  /* size */
   height: 100vh;
   width: var(--nav-width);
+
   border-right: 1px solid var(--light-grey);
+  border-bottom: none;
 }
 .navbar-vertical .logo-container{
   padding: 1rem;
@@ -207,6 +222,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* helper styles */
+.debug-bg{
+  background-color: #880000;
+}
+
 .text-accent{
   color: var(--accent);
 }
@@ -340,4 +359,103 @@ footer{
   margin-left: var(--nav-width);
   padding: 0 1rem;
   
+}
+
+
+/* media queries */
+
+
+/* media query: navbar vertical -> horizontal */
+@media screen and (max-width: 768px) {
+
+  /* grid setup */
+  body {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1f auto;
+    /* removed footer */
+    grid-template-areas:
+      "main"
+      "navbar";
+  }
+
+  main {
+    grid-area: main;
+    margin-left: 0;
+    margin-bottom: 2rem; /* todo: change this for a variable approach based on the navbar height */
+
+    /* margin-bottom: var(--nav-height); */
+    padding: 1rem;
+    /* overflow: hidden; */
+  }
+
+  header{
+    width: 100%;
+  }
+  .navbar-vertical {
+    grid-area: navbar;
+    /* swap solid color for transparent one. */
+    background: none; 
+
+    /* swap height and width */
+    width: 100%;
+    height: auto;
+    /* height: var(--nav-height); */
+
+    /* positioning */
+    position: fixed;
+    bottom: 0;
+
+    /* swap flex direction to row */
+    display: flex;
+    flex-direction: row;
+
+    /* content alignment */
+    justify-content: space-around;
+    align-items: center;
+
+
+    border-top: 1px solid var(--light-grey);
+    border-right: none;
+  }
+  .navbar-vertical::before {
+    content: ""; /* essential, dont remove */
+    position: absolute;  
+    /* strech over parent element */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* add filter */
+    backdrop-filter:  blur(6px) saturate(10%);
+    
+    z-index: -1; /* put it behind the navbar */
+  }
+
+  .navbar-vertical .logo-container {
+    display: none;
+  }
+
+  .navbar-vertical ul {
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100%;
+  }
+
+  .navbar-vertical a {
+    /* reduced font size for mobile */
+    font-size: 1rem;
+  }
+  .options-button-container{
+    margin: 1rem 0 1rem 0;
+  }
+
+  /* footer */
+  footer {
+    /* hidden footer for mobile. Why are there footers anyways?.. */
+    grid-area: none;
+    display: none;
+    margin-left: 0;
+  }
 }
