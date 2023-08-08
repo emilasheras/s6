@@ -32,6 +32,7 @@
   --light-green: #789470;
   --dark-teal: #1d7874;
   --light-teal: #65e4e8;
+  --light-white: #e8e8e8;
 
 
   /* sizes */
@@ -285,7 +286,6 @@ section {
 }
 
 .section-seachbar{
-  /* background-color: #d73131; */
   padding: 1rem;
   display: flex;
   flex-direction: row;
@@ -310,7 +310,7 @@ section {
 .searchbar-container input{
   width: 100%;
   color: var(--accent);
-  background: var(--secondary);
+  background: var(--light-white);
   padding: .5em 2em;
   border: none;
   border-radius: 25px;
@@ -445,7 +445,7 @@ footer{
 
   .navbar-vertical a {
     /* reduced font size for mobile */
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
   .options-button-container{
     margin: 1rem 0 1rem 0;
