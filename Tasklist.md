@@ -1,4 +1,26 @@
 # Projects' to-do list
+### Translate into SASS (DONE)
+- [x] install NodeJs stable
+- [x] install SASS (globally)
+- [x] make a sass folder structure (investigate best practices)
+    - [x] make a sass folder
+        - [x] Base
+        - [x] Components
+        - [x] Layout
+        - [x] ~~Pages~~
+        - [x] ~~Themes~~
+        - [x] Utilities
+    - [x] make a sass file (partial) for the elements found in the original css file
+    - [x] make a main.scss file that imports all the partials
+    - [x] make the animations scss file (partial) at the end of the main SCSS file
+- [ ] Refactoring
+    - [ ] add variables (colors, fonts, etc)
+    - [ ] add indentations
+    - [ ] add loops (for, foreach)
+    - [ ] add conditionals (if, else, etc)
+    - [ ] add extends (inheritance)
+    - [ ] add mixins (functions)
+
 ### General (DONE)
 - [x] remake the layout with GRID
 - [x] remake with flexbox and Bootstrap 5.x
