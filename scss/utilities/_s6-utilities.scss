@@ -1,0 +1,78 @@
+/* s6 Helper Styles */
+.debug-bg {
+	background-color: $s6-debug-color;
+}
+
+.text-accent {
+	color: $accent;
+}
+.bg-accent {
+	color: $dark-grey;
+	background-color: $accent;
+}
+/* the back theme of the page makes the white pictures too bright for the eyes */
+.s6-filter-brightness-50 {
+	filter: brightness(0.5);
+	transition: 0.2s;
+}
+.s6-filter-brightness-75 {
+	filter: brightness(0.75);
+	transition: 0.2s;
+}
+/* increase brigthness on hover */
+.s6-filter-brightness-50:hover,
+.s6-filter-brightness-75:hover {
+	filter: brightness(1);
+}
+
+/* encapsulator without hover effects */
+.s6-encapsulator-double:before {
+	content: $encapsulator-left-hover;
+}
+.s6-encapsulator-double:after {
+	content: $encapsulator-right-hover;
+}
+
+/* encapsulator with hover effects */
+.s6-encapsulator {
+	text-transform: uppercase;
+}
+.s6-encapsulator:before,
+.s6-encapsulator:after {
+	transition: content 0.8s;
+	/* color: $encapsulator-color); */
+}
+
+.s6-encapsulator:before {
+	content: $encapsulator-left;
+}
+.s6-encapsulator:after {
+	content: $encapsulator-right;
+}
+.s6-encapsulator:hover:before {
+	content: $encapsulator-left-hover;
+}
+.s6-encapsulator:hover:after {
+	content: $encapsulator-right-hover;
+}
+
+/* shop secondary content */
+.s6-secondary-content {
+	background-color: $light-grey;
+}
+.s6-img-container {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+.s6-aspect-ratio-square {
+	width: 5rem;
+	height: 5rem;
+}
+.s6-btn {
+	background: $dark-green-2;
+	color: #000000;
+	font-family: "IBM 3270", monospace;
+	padding: 0.1em 0.2em;
+}

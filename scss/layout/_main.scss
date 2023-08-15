@@ -1,0 +1,21 @@
+/* Main Setup */
+main {
+	grid-area: main;
+	margin-left: $nav-width;
+	margin-bottom: 0;
+	padding: 0 1rem;
+}
+
+/* margins top and bottom for sections */
+section {
+	margin: 1rem 0;
+}
+
+@media screen and (max-width: 768px) {
+	main {
+		grid-area: main;
+		margin-left: 0;
+		margin-bottom: 2rem; /* todo: change this for a variable approach based on the navbar height */
+		padding: 1rem;
+	}
+}

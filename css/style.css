@@ -1,84 +1,92 @@
-/* fonts */
-@font-face {
-  font-family: 'IBM 3270';
-  src: url("../assets/fonts/IBM3270/3270-Medium-500.ttf") format('truetype');
-}
-@font-face {
-  font-family: 'Astloch';
-  src: url("../assets/fonts/Astloch/Astloch-Regular.ttf") format('truetype');
-}
-@font-face {
-  font-family: 'Inconsolata';
-  src: url("../assets/fonts/Inconsolata/Inconsolata-Regular.ttf");
-}
-
-/* could also add another gothic script font type here on the future:.. */
-
-:root{
-   /* 1rem = 18px */
+@charset "UTF-8";
+/* Variables Setup */
+/* Reset Setup */
+:root {
+  /* 1rem = 18px */
   font-size: 18px;
-
-  /* colors */
-  --primary: #c1af11;
-  --secondary: #535353;
-  --accent: #28c11c;
-  /* --accent: #00ff11; */
-  --accent-dark: #073f2c;
-  /* other */
-  --dark-grey: #0c0c0c;
-  --light-grey: #313131;
-  --dark-green: #24641f;
-  --dark-green-2: #269809;
-  --light-green: #789470;
-  --dark-teal: #1d7874;
-  --light-teal: #65e4e8;
-  --light-white: #e8e8e8;
-
-
-  /* sizes */
-  --webkit-scrollbar-width: 0.7vw;
-  --logo-size: 10rem;
-  /* nav */
-  --nav-width: 14rem;
-  /* --nav-height:4rem; */
-  --nav-link-color: #65e4e8;
-  --nav-bg-color: var(--dark-grey);
-  --nav-bg-color-transparent: #0c0c0c67; /* should be some transparent value */
-
-
-  /* miscellaneous */
-  /* other possible symbol pairs: † †, « », ‹ ›, [ ], { }, ( ), | |, • •, */
-  --encapsulator-left:  "‹";
-  --encapsulator-right: "›";
-  --encapsulator-left-hover:  "«";
-  --encapsulator-right-hover: "»";
-  --encapsulator-color: var(--dark-teal);
 }
 
 /* reset learned from https://gist.github.com/Asjas/4b0736108d56197fce0ec9068145b421 */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
+
 /* remove default margin */
 body, h1, h2, h3, h4, p, figure, blockquote, dl, dd {
   margin: 0;
 }
+
 body {
   min-height: 100vh;
   line-height: 1.5;
 }
+
 img, picture {
   max-width: 100%;
   /* display: block; */
 }
 
-/* from here on the real styling of the page begins */
+/* headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Astloch", cursive;
+  font-weight: normal;
+  color: #65e4e8;
+  margin: 0;
+  padding: 0;
+  text-transform: capitalize;
+}
 
-/* body styling */
-body{
-  background-color: var(--dark-grey);
-  color: var(--primary);
-  font-family: 'IBM 3270', monospace;
+/* Fonts Setup */
+@font-face {
+  font-family: "IBM 3270";
+  src: url("../assets/fonts/IBM3270/3270-Medium-500.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Astloch";
+  src: url("../assets/fonts/Astloch/Astloch-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Inconsolata";
+  src: url("../assets/fonts/Inconsolata/Inconsolata-Regular.ttf");
+}
+/* could also add another gothic script font type here on the future:.. */
+/* Mixins Setup */
+/* Scrollbar Setup */
+body::-webkit-scrollbar {
+  width: 0.7vw;
+}
+
+body::-webkit-scrollbar:horizontal {
+  height: 0.7vw;
+}
+
+body::-webkit-scrollbar-track,
+body::-webkit-scrollbar-corner {
+  background: #0c0c0c;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #24641f;
+  border-radius: 0.5rem;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background: #28c11c;
+}
+
+/* highlight setup */
+::selection {
+  color: #28c11c;
+  background-color: #073f2c;
+}
+
+/* Body Setup */
+body {
+  background-color: #0c0c0c;
+  color: #c1af11;
+  font-family: "IBM 3270", monospace;
   font-size: 1.2rem;
   margin: 0;
   padding: 0;
@@ -87,82 +95,148 @@ body{
 /* grid setup */
 body {
   display: grid;
-  grid-template-columns:  auto  1fr;
-  grid-template-rows:     1fr   auto;
-  grid-template-areas:
-    "navbar main"
-    "navbar footer";
+  grid-template-columns: auto 1fr;
+  grid-template-rows: 1fr auto;
+  grid-template-areas: "navbar main" "navbar footer";
 }
 
-/* scrollbar setup */
-body::-webkit-scrollbar {
-  width: var(--webkit-scrollbar-width);
+@media screen and (max-width: 768px) {
+  /* grid setup */
+  body {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1f auto;
+    /* removed footer */
+    grid-template-areas: "main" "navbar";
+  }
 }
-body::-webkit-scrollbar:horizontal{
-  height: var(--webkit-scrollbar-width);
+/* Header Setup */
+@media screen and (max-width: 768px) {
+  header {
+    width: 100%;
+  }
 }
-body::-webkit-scrollbar-track, body::-webkit-scrollbar-corner {
-  background: var(--dark-grey);
-}
-body::-webkit-scrollbar-thumb {
-  background: var(--dark-green);
-  border-radius: 0.5rem;
-}
-body::-webkit-scrollbar-thumb:hover {
-  background: var(--accent);
-}
-
-/* highlight setup */
-::selection {
-  color: var(--accent);
-  background-color: var(--accent-dark);
-}
-
-/* main */
+/* Main Setup */
 main {
   grid-area: main;
-  margin-left: var(--nav-width);
+  margin-left: 14rem;
   margin-bottom: 0;
   padding: 0 1rem;
 }
 
-/* nav */
+/* margins top and bottom for sections */
+section {
+  margin: 1rem 0;
+}
+
+@media screen and (max-width: 768px) {
+  main {
+    grid-area: main;
+    margin-left: 0;
+    margin-bottom: 2rem; /* todo: change this for a variable approach based on the navbar height */
+    padding: 1rem;
+  }
+}
+/* Search Bar Setup */
+.section-seachbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.searchbar-container {
+  margin: 1rem;
+  color: #313131;
+  width: 100%;
+  max-width: 20rem;
+  /* padding: 1em; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  /* set as parent container */
+  position: relative;
+}
+
+.searchbar-container .search-icon {
+  position: absolute;
+  left: 0.6em;
+}
+
+.searchbar-container input {
+  text-align: left;
+  width: 100%;
+  color: #28c11c;
+  background: #e8e8e8;
+  padding: 0.5em 2em;
+  border: none;
+  border-radius: 25px;
+}
+
+.searchbar-container input::placeholder {
+  color: #313131;
+}
+
+.searchbar-container input:focus {
+  outline: none;
+}
+
+.searchbar-container .badge {
+  position: absolute;
+  right: 0.6em;
+}
+
+/* Footer Setup */
+footer {
+  grid-area: footer;
+  margin-left: 14rem;
+  padding: 0 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  footer {
+    /* hidden footer for mobile. Why are there footers anyways?.. */
+    grid-area: none;
+    display: none;
+    margin-left: 0;
+  }
+}
+/* Vertical Navbar Setup */
 .navbar-vertical {
   /* move to the top z index. this is cause of the layout change for mobile */
   z-index: 1;
-
   /* bg color */
-  background: var(--nav-bg-color);
-
+  background: #0c0c0c;
   /* positioning */
   grid-area: navbar;
   position: fixed;
   display: flex;
   flex-direction: column;
-
   /* alignment */
   align-items: center;
   justify-content: flex-start;
-
   /* size */
   height: 100vh;
-  width: var(--nav-width);
-
-  border-right: 1px solid var(--light-grey);
+  width: 14rem;
+  border-right: 1px solid #313131;
   border-bottom: none;
 }
-.navbar-vertical .logo-container{
+
+.navbar-vertical .logo-container {
   padding: 1rem;
-  width: var(--logo-size);
-  height: var(--logo-size);
+  width: 10rem;
+  height: 10rem;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.navbar-vertical .logo-container img{
+
+.navbar-vertical .logo-container img {
   object-fit: cover;
   border-radius: 50%;
 }
+
 .navbar-vertical ul {
   list-style: none;
   padding: 0;
@@ -176,18 +250,67 @@ main {
 
 .navbar-vertical a {
   font-family: "Inconsolata", monospace;
-  color: var(--nav-link-color);
+  color: #65e4e8;
   font-size: 1.6rem;
   text-decoration: none;
 }
-.navbar-vertical a:hover{
-  color: var(--accent);
-}
-.navbar-vertical a:active{
-  color: var(--accent);
+
+.navbar-vertical a:hover {
+  color: #28c11c;
 }
 
-.options-button-container{
+.navbar-vertical a:active {
+  color: #28c11c;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar-vertical {
+    grid-area: navbar;
+    /* swap solid color for transparent one. */
+    background: none;
+    /* swap height and width */
+    width: 100%;
+    height: auto;
+    /* positioning */
+    position: fixed;
+    bottom: 0;
+    /* swap flex direction to row */
+    display: flex;
+    flex-direction: row;
+    /* content alignment */
+    justify-content: space-around;
+    align-items: center;
+    border-top: 1px solid #313131;
+    border-right: none;
+  }
+  .navbar-vertical::before {
+    content: ""; /* essential, dont remove */
+    position: absolute;
+    /* strech over parent element */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* add filter */
+    backdrop-filter: blur(6px) saturate(10%);
+    z-index: -1; /* put it behind the navbar */
+  }
+  .navbar-vertical .logo-container {
+    display: none;
+  }
+  .navbar-vertical ul {
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100%;
+  }
+  .navbar-vertical a {
+    /* reduced font size for mobile */
+    font-size: 1.2rem;
+  }
+}
+/* navbar options button styling */
+.options-button-container {
   /* reset the button tag styles to none */
   background: none;
   border: none;
@@ -199,280 +322,214 @@ main {
   justify-content: space-between;
   align-items: center;
 }
-.options-button-container .line{
+
+.options-button-container .line {
   width: 2rem;
-  height: .15rem;
-  background-color: var(--light-teal);
+  height: 0.15rem;
+  background-color: #65e4e8;
   border-radius: 0.05rem;
-  transition: .1s;
+  transition: 0.1s;
 }
-.options-button-container:hover .line{
-  background-color: var(--dark-teal) ;
+
+.options-button-container:hover .line {
+  background-color: #1d7874;
   width: 2.2rem;
 }
 
-
-/* headings */
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Astloch', cursive;
-  font-weight: normal;
-  color: var(--light-teal);
-  margin: 0;
-  padding: 0;
-  text-transform: capitalize;  
+@media screen and (max-width: 768px) {
+  .options-button-container {
+    margin: 1rem 0 1rem 0;
+  }
 }
-
-/* helper styles */
-.debug-bg{
+/* s6 Helper Styles */
+.debug-bg {
   background-color: #880000;
 }
 
-.text-accent{
-  color: var(--accent);
+.text-accent {
+  color: #28c11c;
 }
-.bg-accent{
-  color: var(--dark-grey);
-  background-color: var(--accent);
+
+.bg-accent {
+  color: #0c0c0c;
+  background-color: #28c11c;
 }
+
 /* the back theme of the page makes the white pictures too bright for the eyes */
-.s6-filter-brightness-50{
+.s6-filter-brightness-50 {
   filter: brightness(0.5);
   transition: 0.2s;
 }
-.s6-filter-brightness-75{
+
+.s6-filter-brightness-75 {
   filter: brightness(0.75);
   transition: 0.2s;
 }
+
 /* increase brigthness on hover */
-.s6-filter-brightness-50:hover, 
-.s6-filter-brightness-75:hover{
+.s6-filter-brightness-50:hover,
+.s6-filter-brightness-75:hover {
   filter: brightness(1);
 }
 
 /* encapsulator without hover effects */
-.s6-encapsulator-double:before{
-  content: var(--encapsulator-left-hover);
+.s6-encapsulator-double:before {
+  content: "«";
 }
-.s6-encapsulator-double:after{
-  content: var(--encapsulator-right-hover);
+
+.s6-encapsulator-double:after {
+  content: "»";
 }
 
 /* encapsulator with hover effects */
-.s6-encapsulator{
+.s6-encapsulator {
   text-transform: uppercase;
 }
-.s6-encapsulator:before, .s6-encapsulator:after{
+
+.s6-encapsulator:before,
+.s6-encapsulator:after {
   transition: content 0.8s;
-  /* color: var(--encapsulator-color); */
+  /* color: $encapsulator-color); */
 }
 
-.s6-encapsulator:before{
-  content: var(--encapsulator-left);
+.s6-encapsulator:before {
+  content: "‹";
 }
-.s6-encapsulator:after{
-  content: var(--encapsulator-right);
+
+.s6-encapsulator:after {
+  content: "›";
 }
-.s6-encapsulator:hover:before{
-  content: var(--encapsulator-left-hover);
+
+.s6-encapsulator:hover:before {
+  content: "«";
 }
-.s6-encapsulator:hover:after{
-  content: var(--encapsulator-right-hover);
+
+.s6-encapsulator:hover:after {
+  content: "»";
 }
 
 /* shop secondary content */
-.s6-secondary-content{
-  background-color: var(--light-grey);
+.s6-secondary-content {
+  background-color: #313131;
 }
-.s6-img-container{
+
+.s6-img-container {
   position: relative;
   width: 100%;
   height: 100%;
   overflow: hidden;
 }
-.s6-aspect-ratio-square{
+
+.s6-aspect-ratio-square {
   width: 5rem;
   height: 5rem;
 }
 
-/* main */
-/* margins top and bottom for sections */
-section {
-  margin: 1rem 0;
-}
-
-.section-seachbar{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-}
-.searchbar-container{
-  margin: 1rem;
-  color: var(--light-grey);
-  width: 100%;
-  max-width: 20rem;
-  /* padding: 1em; */
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  /* set as parent container */
-  position: relative;
-}
-.searchbar-container .search-icon{
-  position: absolute;
-  left: .6em;
-}
-.searchbar-container input{
-  text-align: left;
-  width: 100%;
-  color: var(--accent);
-  background: var(--light-white);
-  padding: .5em 2em;
-  border: none;
-  border-radius: 25px;
-}
-.searchbar-container input::placeholder{
-  color: var(--light-grey);
-}
-.searchbar-container input:focus{
-  outline: none;
-}
-
-.searchbar-container .badge{
-  position: absolute;
-  right: .6em;
-}
-
-
-/* todo: revise this . */
-.s6-btn{
-  background: var(--dark-green-2);
+.s6-btn {
+  background: #269809;
   color: #000000;
-  font-family: 'IBM 3270', monospace;
-  padding: .1em .2em;
+  font-family: "IBM 3270", monospace;
+  padding: 0.1em 0.2em;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* footer */
-footer{
-  grid-area: footer;
-  margin-left: var(--nav-width);
-  padding: 0 1rem;
-  
+/* animate every accent to the primary color */
+.s6-animate-accent-to-primary {
+  animation: color-transition 0.5s linear;
 }
 
-
-/* media queries */
-
-
-/* media query: navbar vertical -> horizontal */
-@media screen and (max-width: 768px) {
-
-  /* grid setup */
-  body {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1f auto;
-    /* removed footer */
-    grid-template-areas:
-      "main"
-      "navbar";
+/* abrupt color transition into the text base color */
+@keyframes color-transition {
+  0% {
+    color: #28c11c;
   }
-
-  main {
-    grid-area: main;
-    margin-left: 0;
-    margin-bottom: 2rem; /* todo: change this for a variable approach based on the navbar height */
-
-    /* margin-bottom: var(--nav-height); */
-    padding: 1rem;
-    /* overflow: hidden; */
+  99% {
+    color: #c1af11;
   }
+  100% {
+    color: #28c11c;
+  }
+}
+/* animate the hr tags */
+hr {
+  /* center the HR in whatever container it has without stepping on the bs5 styles */
+  margin-left: auto;
+  margin-right: auto;
+  /* opacity: 1; */
+  /* animate */
+  animation: hr-transition 0.5s linear;
+  /* animation: color-transition 0.5s linear; */
+}
 
-  header{
+@keyframes hr-transition {
+  0% {
+    width: 0;
+  }
+  100% {
     width: 100%;
   }
-  .navbar-vertical {
-    grid-area: navbar;
-    /* swap solid color for transparent one. */
-    background: none; 
+}
+/* animate the nav ul items */
+.navbar-vertical ul a {
+  /* animate */
+  animation: li-transition 1.5s linear infinite;
+}
 
-    /* swap height and width */
-    width: 100%;
-    height: auto;
-    /* height: var(--nav-height); */
+/* very bad. do this with JS later */
+.navbar-vertical li:nth-child(1) a {
+  animation-delay: 0s;
+}
 
-    /* positioning */
-    position: fixed;
-    bottom: 0;
+.navbar-vertical li:nth-child(2) a {
+  animation-delay: 0.25s;
+}
 
-    /* swap flex direction to row */
-    display: flex;
-    flex-direction: row;
+.navbar-vertical li:nth-child(3) a {
+  animation-delay: 0.5s;
+}
 
-    /* content alignment */
-    justify-content: space-around;
-    align-items: center;
+.navbar-vertical li:nth-child(4) a {
+  animation-delay: 0.75s;
+}
 
+.navbar-vertical li:nth-child(5) a {
+  animation-delay: 1s;
+}
 
-    border-top: 1px solid var(--light-grey);
-    border-right: none;
+.navbar-vertical li:nth-child(6) a {
+  animation-delay: 1.25s;
+}
+
+/* the amount of delay should be equal to the total animation time divided by the links amount */
+/* the animation should be an infinite loop that goes over every element and accentuates it a little bit with a hueshift */
+@keyframes li-transition {
+  0% {
+    opacity: 1;
   }
-  .navbar-vertical::before {
-    content: ""; /* essential, dont remove */
-    position: absolute;  
-    /* strech over parent element */
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    /* add filter */
-    backdrop-filter:  blur(6px) saturate(10%);
-    
-    z-index: -1; /* put it behind the navbar */
+  50% {
+    opacity: 0.4;
   }
-
-  .navbar-vertical .logo-container {
-    display: none;
-  }
-
-  .navbar-vertical ul {
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    height: 100%;
-  }
-
-  .navbar-vertical a {
-    /* reduced font size for mobile */
-    font-size: 1.2rem;
-  }
-  .options-button-container{
-    margin: 1rem 0 1rem 0;
-  }
-
-  /* footer */
-  footer {
-    /* hidden footer for mobile. Why are there footers anyways?.. */
-    grid-area: none;
-    display: none;
-    margin-left: 0;
+  100% {
+    opacity: 1;
   }
 }
+.navbar-vertical .logo-container img {
+  animation: logo-passive 10s linear infinite;
+  filter: none;
+  transition: filter 0.2s linear; /* this is to make the logo glow when hovered */
+}
+
+.navbar-vertical .logo-container img:hover {
+  filter: drop-shadow(0 0 0.5rem #28c11c);
+}
+
+/* the logo is a rounded circle, make it flip around like a coin */
+@keyframes logo-passive {
+  0% {
+    transform: rotateY(0deg) rotateX(10deg) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateY(360deg) rotateX(10deg) rotateZ(0deg);
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

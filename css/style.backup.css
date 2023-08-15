@@ -1,0 +1,478 @@
+/* fonts */
+@font-face {
+  font-family: 'IBM 3270';
+  src: url("../assets/fonts/IBM3270/3270-Medium-500.ttf") format('truetype');
+}
+@font-face {
+  font-family: 'Astloch';
+  src: url("../assets/fonts/Astloch/Astloch-Regular.ttf") format('truetype');
+}
+@font-face {
+  font-family: 'Inconsolata';
+  src: url("../assets/fonts/Inconsolata/Inconsolata-Regular.ttf");
+}
+
+/* could also add another gothic script font type here on the future:.. */
+
+:root{
+   /* 1rem = 18px */
+  font-size: 18px;
+
+  /* colors */
+  --primary: #c1af11;
+  --secondary: #535353;
+  --accent: #28c11c;
+  /* --accent: #00ff11; */
+  --accent-dark: #073f2c;
+  /* other */
+  --dark-grey: #0c0c0c;
+  --light-grey: #313131;
+  --dark-green: #24641f;
+  --dark-green-2: #269809;
+  --light-green: #789470;
+  --dark-teal: #1d7874;
+  --light-teal: #65e4e8;
+  --light-white: #e8e8e8;
+
+
+  /* sizes */
+  --webkit-scrollbar-width: 0.7vw;
+  --logo-size: 10rem;
+  /* nav */
+  --nav-width: 14rem;
+  /* --nav-height:4rem; */
+  --nav-link-color: #65e4e8;
+  --nav-bg-color: var(--dark-grey);
+  --nav-bg-color-transparent: #0c0c0c67; /* should be some transparent value */
+
+
+  /* miscellaneous */
+  /* other possible symbol pairs: † †, « », ‹ ›, [ ], { }, ( ), | |, • •, */
+  --encapsulator-left:  "‹";
+  --encapsulator-right: "›";
+  --encapsulator-left-hover:  "«";
+  --encapsulator-right-hover: "»";
+  --encapsulator-color: var(--dark-teal);
+}
+
+/* reset learned from https://gist.github.com/Asjas/4b0736108d56197fce0ec9068145b421 */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+/* remove default margin */
+body, h1, h2, h3, h4, p, figure, blockquote, dl, dd {
+  margin: 0;
+}
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+img, picture {
+  max-width: 100%;
+  /* display: block; */
+}
+
+/* from here on the real styling of the page begins */
+
+/* body styling */
+body{
+  background-color: var(--dark-grey);
+  color: var(--primary);
+  font-family: 'IBM 3270', monospace;
+  font-size: 1.2rem;
+  margin: 0;
+  padding: 0;
+}
+
+/* grid setup */
+body {
+  display: grid;
+  grid-template-columns:  auto  1fr;
+  grid-template-rows:     1fr   auto;
+  grid-template-areas:
+    "navbar main"
+    "navbar footer";
+}
+
+/* scrollbar setup */
+body::-webkit-scrollbar {
+  width: var(--webkit-scrollbar-width);
+}
+body::-webkit-scrollbar:horizontal{
+  height: var(--webkit-scrollbar-width);
+}
+body::-webkit-scrollbar-track, body::-webkit-scrollbar-corner {
+  background: var(--dark-grey);
+}
+body::-webkit-scrollbar-thumb {
+  background: var(--dark-green);
+  border-radius: 0.5rem;
+}
+body::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* highlight setup */
+::selection {
+  color: var(--accent);
+  background-color: var(--accent-dark);
+}
+
+/* main */
+main {
+  grid-area: main;
+  margin-left: var(--nav-width);
+  margin-bottom: 0;
+  padding: 0 1rem;
+}
+
+/* nav */
+.navbar-vertical {
+  /* move to the top z index. this is cause of the layout change for mobile */
+  z-index: 1;
+
+  /* bg color */
+  background: var(--nav-bg-color);
+
+  /* positioning */
+  grid-area: navbar;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+
+  /* alignment */
+  align-items: center;
+  justify-content: flex-start;
+
+  /* size */
+  height: 100vh;
+  width: var(--nav-width);
+
+  border-right: 1px solid var(--light-grey);
+  border-bottom: none;
+}
+.navbar-vertical .logo-container{
+  padding: 1rem;
+  width: var(--logo-size);
+  height: var(--logo-size);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.navbar-vertical .logo-container img{
+  object-fit: cover;
+  border-radius: 50%;
+}
+.navbar-vertical ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 100%;
+}
+
+.navbar-vertical a {
+  font-family: "Inconsolata", monospace;
+  color: var(--nav-link-color);
+  font-size: 1.6rem;
+  text-decoration: none;
+}
+.navbar-vertical a:hover{
+  color: var(--accent);
+}
+.navbar-vertical a:active{
+  color: var(--accent);
+}
+
+.options-button-container{
+  /* reset the button tag styles to none */
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 1rem 0 2rem 0;
+  height: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.options-button-container .line{
+  width: 2rem;
+  height: .15rem;
+  background-color: var(--light-teal);
+  border-radius: 0.05rem;
+  transition: .1s;
+}
+.options-button-container:hover .line{
+  background-color: var(--dark-teal) ;
+  width: 2.2rem;
+}
+
+
+/* headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Astloch', cursive;
+  font-weight: normal;
+  color: var(--light-teal);
+  margin: 0;
+  padding: 0;
+  text-transform: capitalize;  
+}
+
+/* helper styles */
+.debug-bg{
+  background-color: #880000;
+}
+
+.text-accent{
+  color: var(--accent);
+}
+.bg-accent{
+  color: var(--dark-grey);
+  background-color: var(--accent);
+}
+/* the back theme of the page makes the white pictures too bright for the eyes */
+.s6-filter-brightness-50{
+  filter: brightness(0.5);
+  transition: 0.2s;
+}
+.s6-filter-brightness-75{
+  filter: brightness(0.75);
+  transition: 0.2s;
+}
+/* increase brigthness on hover */
+.s6-filter-brightness-50:hover, 
+.s6-filter-brightness-75:hover{
+  filter: brightness(1);
+}
+
+/* encapsulator without hover effects */
+.s6-encapsulator-double:before{
+  content: var(--encapsulator-left-hover);
+}
+.s6-encapsulator-double:after{
+  content: var(--encapsulator-right-hover);
+}
+
+/* encapsulator with hover effects */
+.s6-encapsulator{
+  text-transform: uppercase;
+}
+.s6-encapsulator:before, .s6-encapsulator:after{
+  transition: content 0.8s;
+  /* color: var(--encapsulator-color); */
+}
+
+.s6-encapsulator:before{
+  content: var(--encapsulator-left);
+}
+.s6-encapsulator:after{
+  content: var(--encapsulator-right);
+}
+.s6-encapsulator:hover:before{
+  content: var(--encapsulator-left-hover);
+}
+.s6-encapsulator:hover:after{
+  content: var(--encapsulator-right-hover);
+}
+
+/* shop secondary content */
+.s6-secondary-content{
+  background-color: var(--light-grey);
+}
+.s6-img-container{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.s6-aspect-ratio-square{
+  width: 5rem;
+  height: 5rem;
+}
+
+/* main */
+/* margins top and bottom for sections */
+section {
+  margin: 1rem 0;
+}
+
+.section-seachbar{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.searchbar-container{
+  margin: 1rem;
+  color: var(--light-grey);
+  width: 100%;
+  max-width: 20rem;
+  /* padding: 1em; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  /* set as parent container */
+  position: relative;
+}
+.searchbar-container .search-icon{
+  position: absolute;
+  left: .6em;
+}
+.searchbar-container input{
+  text-align: left;
+  width: 100%;
+  color: var(--accent);
+  background: var(--light-white);
+  padding: .5em 2em;
+  border: none;
+  border-radius: 25px;
+}
+.searchbar-container input::placeholder{
+  color: var(--light-grey);
+}
+.searchbar-container input:focus{
+  outline: none;
+}
+
+.searchbar-container .badge{
+  position: absolute;
+  right: .6em;
+}
+
+
+/* todo: revise this . */
+.s6-btn{
+  background: var(--dark-green-2);
+  color: #000000;
+  font-family: 'IBM 3270', monospace;
+  padding: .1em .2em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* footer */
+footer{
+  grid-area: footer;
+  margin-left: var(--nav-width);
+  padding: 0 1rem;
+  
+}
+
+
+/* media queries */
+
+
+/* media query: navbar vertical -> horizontal */
+@media screen and (max-width: 768px) {
+
+  /* grid setup */
+  body {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1f auto;
+    /* removed footer */
+    grid-template-areas:
+      "main"
+      "navbar";
+  }
+
+  main {
+    grid-area: main;
+    margin-left: 0;
+    margin-bottom: 2rem; /* todo: change this for a variable approach based on the navbar height */
+
+    /* margin-bottom: var(--nav-height); */
+    padding: 1rem;
+    /* overflow: hidden; */
+  }
+
+  header{
+    width: 100%;
+  }
+  .navbar-vertical {
+    grid-area: navbar;
+    /* swap solid color for transparent one. */
+    background: none; 
+
+    /* swap height and width */
+    width: 100%;
+    height: auto;
+    /* height: var(--nav-height); */
+
+    /* positioning */
+    position: fixed;
+    bottom: 0;
+
+    /* swap flex direction to row */
+    display: flex;
+    flex-direction: row;
+
+    /* content alignment */
+    justify-content: space-around;
+    align-items: center;
+
+
+    border-top: 1px solid var(--light-grey);
+    border-right: none;
+  }
+  .navbar-vertical::before {
+    content: ""; /* essential, dont remove */
+    position: absolute;  
+    /* strech over parent element */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* add filter */
+    backdrop-filter:  blur(6px) saturate(10%);
+    
+    z-index: -1; /* put it behind the navbar */
+  }
+
+  .navbar-vertical .logo-container {
+    display: none;
+  }
+
+  .navbar-vertical ul {
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100%;
+  }
+
+  .navbar-vertical a {
+    /* reduced font size for mobile */
+    font-size: 1.2rem;
+  }
+  .options-button-container{
+    margin: 1rem 0 1rem 0;
+  }
+
+  /* footer */
+  footer {
+    /* hidden footer for mobile. Why are there footers anyways?.. */
+    grid-area: none;
+    display: none;
+    margin-left: 0;
+  }
+}
