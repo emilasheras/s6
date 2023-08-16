@@ -1,9 +1,9 @@
 /* Header Setup */
-
-// Regular styles here
-
-@media screen and (max-width: 768px) {
-	header {
-		width: 100%;
+header{
+	// Regular styles here
+	@media screen and (max-width: 768px) {
+		& {
+			width: 100%;
+		}
 	}
 }

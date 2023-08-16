@@ -22,100 +22,103 @@
 
 	border-right: 1px solid $light-grey;
 	border-bottom: none;
-}
 
-.navbar-vertical .logo-container {
-	padding: 1rem;
-	width: $logo-size;
-	height: $logo-size;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-.navbar-vertical .logo-container img {
-	object-fit: cover;
-	border-radius: 50%;
-}
-.navbar-vertical ul {
-	list-style: none;
-	padding: 0;
-	margin: 0;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: space-evenly;
-	height: 100%;
-}
+	& .logo-container {
+		padding: 1rem;
+		width: $logo-size;
+		height: $logo-size;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 
-.navbar-vertical a {
-	font-family: "Inconsolata", monospace;
-	color: $nav-link-color;
-	font-size: 1.6rem;
-	text-decoration: none;
-}
-.navbar-vertical a:hover {
-	color: $accent;
-}
-.navbar-vertical a:active {
-	color: $accent;
-}
-
-@media screen and (max-width: 768px) {
-
-	.navbar-vertical {
-	  grid-area: navbar;
-	  /* swap solid color for transparent one. */
-	  background: none; 
-  
-	  /* swap height and width */
-	  width: 100%;
-	  height: auto;
-  
-	  /* positioning */
-	  position: fixed;
-	  bottom: 0;
-  
-	  /* swap flex direction to row */
-	  display: flex;
-	  flex-direction: row;
-  
-	  /* content alignment */
-	  justify-content: space-around;
-	  align-items: center;
-  
-  
-	  border-top: 1px solid $light-grey;
-	  border-right: none;
+		// logo img
+		img {
+			object-fit: cover;
+			border-radius: 50%;
+		}
 	}
-	.navbar-vertical::before {
-	  content: ""; /* essential, dont remove */
-	  position: absolute;  
-	  /* strech over parent element */
-	  top: 0;
-	  left: 0;
-	  right: 0;
-	  bottom: 0;
-	  /* add filter */
-	  backdrop-filter:  blur(6px) saturate(10%);
+	& ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-evenly;
+		height: 100%;
+	}
+	
+	& a {
+		font-family: "Inconsolata", monospace;
+		color: $nav-link-color;
+		font-size: 1.6rem;
+		text-decoration: none;
+		&:hover {
+			color: $accent;
+		}
+		&:active {
+			color: $accent;
+		}
+	}
+	
+	@media screen and (max-width: 768px) {
+	
+		& {
+		  grid-area: navbar;
+		  /* swap solid color for transparent one. */
+		  background: none; 
 	  
-	  z-index: -1; /* put it behind the navbar */
-	}
-  
-	.navbar-vertical .logo-container {
-	  display: none;
-	}
-  
-	.navbar-vertical ul {
-	  flex-direction: row;
-	  justify-content: space-evenly;
-	  align-items: center;
-	  height: 100%;
-	}
-  
-	.navbar-vertical a {
-	  /* reduced font size for mobile */
-	  font-size: 1.2rem;
+		  /* swap height and width */
+		  width: 100%;
+		  height: auto;
+	  
+		  /* positioning */
+		  position: fixed;
+		  bottom: 0;
+	  
+		  /* swap flex direction to row */
+		  display: flex;
+		  flex-direction: row;
+	  
+		  /* content alignment */
+		  justify-content: space-around;
+		  align-items: center;
+	  
+	  
+		  border-top: 1px solid $light-grey;
+		  border-right: none;
+		}
+		&::before {
+		  content: ""; /* essential, dont remove */
+		  position: absolute;  
+		  /* strech over parent element */
+		  top: 0;
+		  left: 0;
+		  right: 0;
+		  bottom: 0;
+		  /* add filter */
+		  backdrop-filter:  blur(6px) saturate(10%);
+		  
+		  z-index: -1; /* put it behind the navbar */
+		}
+	  
+		& .logo-container {
+		  display: none;
+		}
+	  
+		& ul {
+		  flex-direction: row;
+		  justify-content: space-evenly;
+		  align-items: center;
+		  height: 100%;
+		}
+	  
+		& a {
+		  /* reduced font size for mobile */
+		  font-size: 1.2rem;
+		}
 	}
 }
+
 
 @import "options-button";

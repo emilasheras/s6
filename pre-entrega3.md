@@ -1,14 +1,14 @@
 # Pre-Entrega 3
 
 - [ ] Sass & Css
-    - [ ] BEM
-    - [ ] Variables
+    - [x] BEM
+    - [x] Variables
     - [ ] Nesting
     - [ ] Loops
     - [ ] Conditionals
     - [ ] Mixins
     - [ ] Extend/Inheritance
-    - [ ] Animations
+    - [x] Animations
 - [ ] Responsive up to 300px width
 - [ ] Real text
 - [ ] Real images

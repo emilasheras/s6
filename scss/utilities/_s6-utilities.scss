@@ -1,78 +1,92 @@
 /* s6 Helper Styles */
-.debug-bg {
-	background-color: $s6-debug-color;
-}
+$lib-prefix: "s6";
 
-.text-accent {
-	color: $accent;
-}
-.bg-accent {
-	color: $dark-grey;
-	background-color: $accent;
-}
-/* the back theme of the page makes the white pictures too bright for the eyes */
-.s6-filter-brightness-50 {
-	filter: brightness(0.5);
-	transition: 0.2s;
-}
-.s6-filter-brightness-75 {
-	filter: brightness(0.75);
-	transition: 0.2s;
-}
-/* increase brigthness on hover */
-.s6-filter-brightness-50:hover,
-.s6-filter-brightness-75:hover {
-	filter: brightness(1);
-}
+.#{$lib-prefix}{
+	
+	&-debug-bg {
+		background-color: $s6-debug-color;
+	}
+	
+	&-text-accent {
+		color: $accent;
+	}
+	&-bg-accent {
+		color: $dark-grey;
+		background-color: $accent;
+	}
+	
+	/* s6 brightness utilities setup */
+	// this makes about 20 classes of brightnesses from 5% to 100%
+	@for $i from 1 through 20 {
+		$increment: $i * 5;
+		&-filter-brightness-#{$increment} {
+			filter: brightness(#{$increment / 100});
+			transition: 0.2s;
+			&:hover {
+				filter: brightness(1);
+			}
+		}
+	}
 
-/* encapsulator without hover effects */
-.s6-encapsulator-double:before {
-	content: $encapsulator-left-hover;
-}
-.s6-encapsulator-double:after {
-	content: $encapsulator-right-hover;
-}
 
-/* encapsulator with hover effects */
-.s6-encapsulator {
-	text-transform: uppercase;
-}
-.s6-encapsulator:before,
-.s6-encapsulator:after {
-	transition: content 0.8s;
-	/* color: $encapsulator-color); */
-}
-
-.s6-encapsulator:before {
-	content: $encapsulator-left;
-}
-.s6-encapsulator:after {
-	content: $encapsulator-right;
-}
-.s6-encapsulator:hover:before {
-	content: $encapsulator-left-hover;
-}
-.s6-encapsulator:hover:after {
-	content: $encapsulator-right-hover;
-}
-
-/* shop secondary content */
-.s6-secondary-content {
-	background-color: $light-grey;
-}
-.s6-img-container {
-	position: relative;
-	width: 100%;
-	height: 100%;
-	overflow: hidden;
-}
-.s6-aspect-ratio-square {
-	width: 5rem;
-	height: 5rem;
-}
-.s6-btn {
-	background: $dark-green-2;
-	color: #000000;
-	font-family: "IBM 3270", monospace;
-	padding: 0.1em 0.2em;
+	/* encapsulator without hover effects */
+	&-encapsulator-double{
+		&:before {
+			content: $encapsulator-left-hover;
+		}
+		&:after {
+			content: $encapsulator-right-hover;
+		}
+	}
+	
+	/* encapsulator with hover effects */
+	&-encapsulator{
+		& {
+			text-transform: uppercase;
+		}
+		&:before,
+		&:after {
+			transition: content 0.8s;
+			/* color: $encapsulator-color); */
+		}
+		&:before {
+			content: $encapsulator-left;
+		}
+		&:after {
+			content: $encapsulator-right;
+		}
+		&:hover:before {
+			content: $encapsulator-left-hover;
+		}
+		&:hover:after {
+			content: $encapsulator-right-hover;
+		}
+	}
+	
+	/* shop secondary content */
+	&-secondary-content {
+		background-color: $light-grey;
+	}
+	&-img-container {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+	}
+	
+	// this makes about 5 classes of aspect ratios from 1 to 5
+	@for $i from 1 through 5 {
+		$increment: $i;
+		&-aspect-ratio-square-#{$increment} {
+			width: #{$increment}rem;
+			height: #{$increment}rem;
+		}
+	}
+	
+	&-btn {
+		background: $dark-green-2;
+		color: #000000;
+		font-family: "IBM 3270", monospace;
+		padding: 0.1em 0.2em;
+	}
 }

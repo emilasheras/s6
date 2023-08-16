@@ -10,21 +10,25 @@
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: center;
-}
-.options-button-container .line {
-	width: 2rem;
-	height: 0.15rem;
-	background-color: $light-teal;
-	border-radius: 0.05rem;
-	transition: 0.1s;
-}
-.options-button-container:hover .line {
-	background-color: $dark-teal;
-	width: 2.2rem;
-}
 
-@media screen and (max-width: 768px) {
-	.options-button-container {
-		margin: 1rem 0 1rem 0;
+	& .line {
+		width: 2rem;
+		height: 0.15rem;
+		background-color: $light-teal;
+		border-radius: 0.05rem;
+		transition: 0.1s;
+	}
+	&:hover .line {
+		background-color: $dark-teal;
+		width: 2.2rem;
+	}
+	
+	@media screen and (max-width: 768px) {
+		& {
+			margin: 1rem 0 1rem 0;
+		}
 	}
 }
+
+
+
