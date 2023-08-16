@@ -3,8 +3,8 @@
 - [ ] Sass & Css
     - [x] BEM
     - [x] Variables
-    - [ ] Nesting
-    - [ ] Loops
+    - [x] Nesting
+    - [x] Loops
     - [ ] Conditionals
     - [ ] Mixins
     - [ ] Extend/Inheritance
