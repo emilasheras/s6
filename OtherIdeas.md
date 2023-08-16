@@ -11,3 +11,4 @@
 - [ ] make the text display speed be random but also somehow controlled by the user (slowest, slow, medium, fast, fastest)
 - [ ] make the html elements have a pre-render animation that makes them fade in from the background color to the foreground color
 - [ ] make the hr tag have a cool animation. maybe from the center onto the sides?
+- [ ] make accessibility as a THEME switcher. Only for the visibility impaired.

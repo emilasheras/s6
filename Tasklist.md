@@ -1,5 +1,5 @@
 # Projects' to-do list
-### Translate into SASS (DONE)
+### Translate into SASS (DONE) (branch css-to-sass-translation)
 - [x] install NodeJs stable
 - [x] install SASS (globally)
 - [x] make a sass folder structure (investigate best practices)
