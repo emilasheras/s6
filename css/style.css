@@ -1,9 +1,22 @@
 @charset "UTF-8";
 /* Variables Setup */
+/* taken from bs5.3 docs */
+/* In this case, we choose the accent color based on Deuteranopia */
+/* Mixins Setup */
 /* Reset Setup */
 :root {
   /* 1rem = 18px */
   font-size: 18px;
+}
+@media (max-width: 768px) {
+  :root {
+    font-size: 16px;
+  }
+}
+@media (max-width: 576px) {
+  :root {
+    font-size: 15px;
+  }
 }
 
 /* reset learned from https://gist.github.com/Asjas/4b0736108d56197fce0ec9068145b421 */
@@ -52,7 +65,6 @@ h1, h2, h3, h4, h5, h6 {
   src: url("../assets/fonts/Inconsolata/Inconsolata-Regular.ttf");
 }
 /* could also add another gothic script font type here on the future:.. */
-/* Mixins Setup */
 /* Scrollbar Setup */
 body::-webkit-scrollbar {
   width: 0.7vw;
@@ -539,6 +551,15 @@ footer {
   color: #000000;
   font-family: "IBM 3270", monospace;
   padding: 0.1em 0.2em;
+}
+.s6-square-av {
+  width: 100px;
+  height: 100px;
+}
+.s6-circle-av {
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
 }
 
 /* animate every accent to the primary color */

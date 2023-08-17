@@ -20,7 +20,7 @@ $lib-prefix: "s6";
 	@for $i from 1 through 20 {
 		$increment: $i * 5;
 		&-filter-brightness-#{$increment} {
-			filter: brightness(#{$increment / 100});
+			filter: brightness(calc($increment / 100));
 			transition: 0.2s;
 			&:hover {
 				filter: brightness(1);
@@ -88,5 +88,13 @@ $lib-prefix: "s6";
 		color: #000000;
 		font-family: "IBM 3270", monospace;
 		padding: 0.1em 0.2em;
+	}
+
+
+	&-square-av {
+		@include avatar(100px, $circle: false);
+	}
+	&-circle-av {
+		@include avatar(100px, $circle: true);
 	}
 }

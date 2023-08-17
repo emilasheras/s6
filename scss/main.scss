@@ -1,8 +1,8 @@
 // Imports                                  // Translation STATUS
 @import "base/variables";                   // ok
+@import 'utilities/mixins';                 // ok
 @import "base/reset";                       // ok
 @import "base/typography";                  // ok
-@import 'utilities/mixins';                 // ok
 @import "layout/scrollbar";                 // ok
 @import "utilities/selection-highlight";    // ok
 @import "layout/body";                      // ok

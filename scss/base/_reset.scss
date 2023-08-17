@@ -1,8 +1,26 @@
 /* Reset Setup */
+
+@use "sass:map";
 :root {
 	/* 1rem = 18px */
-	font-size: $font-size;
-}
+	font-size: $base-font-size;
+
+	// media queries for mobile' devices
+	@media (max-width: map.get($grid-breakpoints-bs5,md)) {
+		& {
+			font-size: $mobile-font-size;
+		}
+	}
+	@media (max-width: map.get($grid-breakpoints-bs5,sm)) {
+		& {
+			font-size: $small-mobile-font-size;
+		}
+	}
+		
+} 
+
+
+
 /* reset learned from https://gist.github.com/Asjas/4b0736108d56197fce0ec9068145b421 */
 *,
 *::before,
