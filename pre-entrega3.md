@@ -13,7 +13,7 @@
 - [ ] Real text
 - [ ] Real images
     - [ ] Compressed images to load faster
-    - [ ] Add alt to images
+    - [x] Add alt to images
 - [ ] Pass the SEO of Lighthouse on the desktop and mobile
 - [x] Use the correct semantic tags (better for SEO)
 - [ ] Add meta tags with https://metatags.io/

@@ -6,16 +6,16 @@
 /* Reset Setup */
 :root {
   /* 1rem = 18px */
-  font-size: 18px;
+  font-size: 16px;
 }
 @media (max-width: 768px) {
   :root {
-    font-size: 16px;
+    font-size: 14px;
   }
 }
 @media (max-width: 576px) {
   :root {
-    font-size: 15px;
+    font-size: 13px;
   }
 }
 
@@ -142,6 +142,27 @@ main section {
     margin-left: 0;
     margin-bottom: 2rem; /* todo: change this for a variable approach based on the navbar height */
     padding: 1rem;
+  }
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+  grid-auto-rows: 22rem;
+  gap: 8px; /* Adjust as needed */
+}
+.gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  overflow: hidden;
+}
+@media screen and (min-width: 576px) {
+  .gallery .img-tall {
+    grid-row: span 2/auto;
+  }
+  .gallery .img-wide {
+    grid-column: span 2/auto;
   }
 }
 
@@ -527,24 +548,24 @@ footer {
   overflow: hidden;
 }
 .s6-aspect-ratio-square-1 {
-  width: 1rem;
-  height: 1rem;
+  width: 6rem;
+  height: 6rem;
 }
 .s6-aspect-ratio-square-2 {
-  width: 2rem;
-  height: 2rem;
+  width: 12rem;
+  height: 12rem;
 }
 .s6-aspect-ratio-square-3 {
-  width: 3rem;
-  height: 3rem;
+  width: 18rem;
+  height: 18rem;
 }
 .s6-aspect-ratio-square-4 {
-  width: 4rem;
-  height: 4rem;
+  width: 24rem;
+  height: 24rem;
 }
 .s6-aspect-ratio-square-5 {
-  width: 5rem;
-  height: 5rem;
+  width: 30rem;
+  height: 30rem;
 }
 .s6-btn {
   background: #269809;

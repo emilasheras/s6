@@ -1,5 +1,4 @@
 /* s6 Helper Styles */
-$lib-prefix: "s6";
 
 .#{$lib-prefix}{
 	
@@ -76,10 +75,11 @@ $lib-prefix: "s6";
 	
 	// this makes about 5 classes of aspect ratios from 1 to 5
 	@for $i from 1 through 5 {
-		$increment: $i;
-		&-aspect-ratio-square-#{$increment} {
-			width: #{$increment}rem;
-			height: #{$increment}rem;
+		$increment: $i*6;
+		&-aspect-ratio-square-#{$i} {
+			width: #{$increment*1}rem;
+			// height: auto;
+			height: #{$increment*1}rem;
 		}
 	}
 	
