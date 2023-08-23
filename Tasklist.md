@@ -14,12 +14,12 @@
     - [x] make a main.scss file that imports all the partials
     - [x] make the animations scss file (partial) at the end of the main SCSS file
 - [ ] Refactoring
-    - [ ] add variables (colors, fonts, etc)
-    - [ ] add indentations
-    - [ ] add loops (for, foreach)
-    - [ ] add conditionals (if, else, etc)
+    - [x] add variables (colors, fonts, etc)
+    - [x] add indentations
+    - [x] add loops (for, foreach)
+    - [x] add conditionals (if, else, etc)
     - [ ] add extends (inheritance)
-    - [ ] add mixins (functions)
+    - [x] add mixins (functions)
 
 ### General (DONE)
 - [x] remake the layout with GRID
@@ -34,7 +34,7 @@
 - [x] make at least one thing responsive with media queries for the sake of it
 - [x] upload into a github repo
     - [ ] make a readme.md that explains the project and intention
-- [ ] make a favicon
+- [x] make a favicon
 - [x] make a logo
 - [x] make a footer
 - [x] ~~change the static message into a bs5 toast one~~
