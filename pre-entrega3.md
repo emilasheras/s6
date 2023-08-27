@@ -10,9 +10,9 @@
     - [ ] Extend/Inheritance
     - [x] Animations
 - [x] Responsive up to 300px width
-- [ ] Real text
-- [ ] Real images
-    - [ ] Compressed images to load faster
+- [x] Real text
+- [x] Real images
+    - [x] Compressed images to load faster
     - [x] Add alt to images
 - [ ] Pass the SEO of Lighthouse on the desktop and mobile
 - [x] Use the correct semantic tags (better for SEO)

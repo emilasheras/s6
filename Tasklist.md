@@ -1,4 +1,15 @@
 # Projects' to-do list
+
+### Things that need to be done before the last deliverable.
+- [ ] change "NDX" to "IDX" in the navbar of all pages
+- [ ] finish the implementation for the "Nexus" page
+- [ ] finish the implementation for the "About" page
+- [ ] make the hamburger menu work for mobile
+- [ ] make the Js code for the text more performant. its creating a lot of DOM elements.
+- [ ] make a 404 page.
+- [ ] fix the favicons.
+
+
 ### Translate into SASS (DONE) (branch css-to-sass-translation)
 - [x] install NodeJs stable
 - [x] install SASS (globally)
