@@ -11,12 +11,6 @@
 			font-size: $mobile-font-size;
 		}
 	}
-	@media (max-width: map.get($grid-breakpoints-bs5,sm)) {
-		& {
-			font-size: $small-mobile-font-size;
-		}
-	}
-		
 } 
 
 
