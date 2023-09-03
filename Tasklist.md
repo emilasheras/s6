@@ -1,12 +1,12 @@
 # Projects' to-do list
 
 ### Things that need to be done before the last deliverable.
-- [ ] change "NDX" to "IDX" in the navbar of all pages
+- [x] change "NDX" to "IDX" in the navbar of all pages
 - [ ] finish the implementation for the "Nexus" page
-- [ ] finish the implementation for the "About" page
+- [x] finish the implementation for the "About" page
 - [ ] make the hamburger menu work for mobile
 - [ ] make the Js code for the text more performant. its creating a lot of DOM elements.
-- [ ] make a 404 page.
+- [x] make a 404 page.
 - [ ] fix the favicons.
 
 
