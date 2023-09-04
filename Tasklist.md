@@ -2,7 +2,7 @@
 
 ### Things that need to be done before the last deliverable.
 - [x] change "NDX" to "IDX" in the navbar of all pages
-- [ ] finish the implementation for the "Nexus" page
+- [x] finish the implementation for the "Nexus" page
 - [x] finish the implementation for the "About" page
 - [x] make the hamburger menu work for mobile
 - [ ] make the Js code for the text more performant. its creating a lot of DOM elements.

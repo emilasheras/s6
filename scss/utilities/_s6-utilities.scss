@@ -19,10 +19,10 @@
 	@for $i from 1 through 20 {
 		$increment: $i * 5;
 		&-filter-brightness-#{$increment} {
-			filter: brightness(calc($increment / 100));
 			transition: 0.2s;
+			filter: brightness(1);
 			&:hover {
-				filter: brightness(1);
+				filter: brightness(calc($increment / 100));
 			}
 		}
 	}

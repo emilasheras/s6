@@ -56,6 +56,10 @@ h1, h2, h3, h4, h5, h6 {
   src: url("../assets/fonts/Astloch/Astloch-Regular.ttf") format("truetype");
 }
 @font-face {
+  font-family: "Astloch-Bold";
+  src: url("../assets/fonts/Astloch/Astloch-Bold.ttf") format("truetype");
+}
+@font-face {
   font-family: "Inconsolata";
   src: url("../assets/fonts/Inconsolata/Inconsolata-Regular.ttf");
 }
@@ -365,6 +369,42 @@ footer {
   }
 }
 
+/* Buttons Setup */
+.s6-link-nexus-container {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.s6-btn-link {
+  font-family: "Astloch-Bold", cursive;
+  text-decoration: none;
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+  font-weight: 900;
+  border-radius: 15px;
+  border: #073f2c;
+  margin: 1rem 0;
+  width: 22rem;
+  box-shadow: 60px -16px teal;
+  box-shadow: 0px 0px 3px 2px #313131;
+  background-size: 300% 300%;
+  background-image: linear-gradient(90deg, #28c11c, #5643FF);
+  background-position: left;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  transition: background 250ms ease-in-out, transform 50ms ease-in-out, box-shadow 550ms ease-in-out;
+}
+.s6-btn-link:hover {
+  background-position: right;
+  box-shadow: 0px 0px 3px 2px #5643FF;
+}
+.s6-btn-link:active {
+  transform: translateY(2px);
+}
+
 /* s6 Helper Styles */
 .s6 {
   /* s6 brightness utilities setup */
@@ -383,141 +423,141 @@ footer {
   background-color: #28c11c;
 }
 .s6-filter-brightness-5 {
-  filter: brightness(0.05);
   transition: 0.2s;
+  filter: brightness(1);
 }
 .s6-filter-brightness-5:hover {
-  filter: brightness(1);
+  filter: brightness(0.05);
 }
 .s6-filter-brightness-10 {
-  filter: brightness(0.1);
   transition: 0.2s;
+  filter: brightness(1);
 }
 .s6-filter-brightness-10:hover {
-  filter: brightness(1);
+  filter: brightness(0.1);
 }
 .s6-filter-brightness-15 {
-  filter: brightness(0.15);
   transition: 0.2s;
+  filter: brightness(1);
 }
 .s6-filter-brightness-15:hover {
-  filter: brightness(1);
+  filter: brightness(0.15);
 }
 .s6-filter-brightness-20 {
-  filter: brightness(0.2);
   transition: 0.2s;
+  filter: brightness(1);
 }
 .s6-filter-brightness-20:hover {
-  filter: brightness(1);
+  filter: brightness(0.2);
 }
 .s6-filter-brightness-25 {
-  filter: brightness(0.25);
   transition: 0.2s;
+  filter: brightness(1);
 }
 .s6-filter-brightness-25:hover {
-  filter: brightness(1);
+  filter: brightness(0.25);
 }
 .s6-filter-brightness-30 {
-  filter: brightness(0.3);
   transition: 0.2s;
+  filter: brightness(1);
 }
 .s6-filter-brightness-30:hover {
-  filter: brightness(1);
+  filter: brightness(0.3);
 }
 .s6-filter-brightness-35 {
-  filter: brightness(0.35);
   transition: 0.2s;
+  filter: brightness(1);
 }
 .s6-filter-brightness-35:hover {
-  filter: brightness(1);
+  filter: brightness(0.35);
 }
 .s6-filter-brightness-40 {
-  filter: brightness(0.4);
   transition: 0.2s;
+  filter: brightness(1);
 }
 .s6-filter-brightness-40:hover {
-  filter: brightness(1);
+  filter: brightness(0.4);
 }
 .s6-filter-brightness-45 {
-  filter: brightness(0.45);
   transition: 0.2s;
+  filter: brightness(1);
 }
 .s6-filter-brightness-45:hover {
-  filter: brightness(1);
+  filter: brightness(0.45);
 }
 .s6-filter-brightness-50 {
-  filter: brightness(0.5);
   transition: 0.2s;
+  filter: brightness(1);
 }
 .s6-filter-brightness-50:hover {
-  filter: brightness(1);
+  filter: brightness(0.5);
 }
 .s6-filter-brightness-55 {
-  filter: brightness(0.55);
   transition: 0.2s;
+  filter: brightness(1);
 }
 .s6-filter-brightness-55:hover {
-  filter: brightness(1);
+  filter: brightness(0.55);
 }
 .s6-filter-brightness-60 {
-  filter: brightness(0.6);
   transition: 0.2s;
+  filter: brightness(1);
 }
 .s6-filter-brightness-60:hover {
-  filter: brightness(1);
+  filter: brightness(0.6);
 }
 .s6-filter-brightness-65 {
-  filter: brightness(0.65);
   transition: 0.2s;
+  filter: brightness(1);
 }
 .s6-filter-brightness-65:hover {
-  filter: brightness(1);
+  filter: brightness(0.65);
 }
 .s6-filter-brightness-70 {
-  filter: brightness(0.7);
   transition: 0.2s;
+  filter: brightness(1);
 }
 .s6-filter-brightness-70:hover {
-  filter: brightness(1);
+  filter: brightness(0.7);
 }
 .s6-filter-brightness-75 {
-  filter: brightness(0.75);
   transition: 0.2s;
+  filter: brightness(1);
 }
 .s6-filter-brightness-75:hover {
-  filter: brightness(1);
+  filter: brightness(0.75);
 }
 .s6-filter-brightness-80 {
-  filter: brightness(0.8);
   transition: 0.2s;
+  filter: brightness(1);
 }
 .s6-filter-brightness-80:hover {
-  filter: brightness(1);
+  filter: brightness(0.8);
 }
 .s6-filter-brightness-85 {
-  filter: brightness(0.85);
   transition: 0.2s;
+  filter: brightness(1);
 }
 .s6-filter-brightness-85:hover {
-  filter: brightness(1);
+  filter: brightness(0.85);
 }
 .s6-filter-brightness-90 {
-  filter: brightness(0.9);
   transition: 0.2s;
+  filter: brightness(1);
 }
 .s6-filter-brightness-90:hover {
-  filter: brightness(1);
+  filter: brightness(0.9);
 }
 .s6-filter-brightness-95 {
-  filter: brightness(0.95);
   transition: 0.2s;
+  filter: brightness(1);
 }
 .s6-filter-brightness-95:hover {
-  filter: brightness(1);
+  filter: brightness(0.95);
 }
 .s6-filter-brightness-100 {
-  filter: brightness(1);
   transition: 0.2s;
+  filter: brightness(1);
 }
 .s6-filter-brightness-100:hover {
   filter: brightness(1);
