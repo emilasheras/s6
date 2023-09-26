@@ -7,7 +7,7 @@
 - [x] make the hamburger menu work for mobile
 - [ ] make the Js code for the text more performant. its creating a lot of DOM elements.
 - [x] make a 404 page.
-- [ ] fix the favicons.
+- [x] fix the favicons.
 
 
 ### Translate into SASS (DONE) (branch css-to-sass-translation)
@@ -24,12 +24,12 @@
     - [x] make a sass file (partial) for the elements found in the original css file
     - [x] make a main.scss file that imports all the partials
     - [x] make the animations scss file (partial) at the end of the main SCSS file
-- [ ] Refactoring
+- [x] Refactoring
     - [x] add variables (colors, fonts, etc)
     - [x] add indentations
     - [x] add loops (for, foreach)
     - [x] add conditionals (if, else, etc)
-    - [ ] add extends (inheritance)
+    - [x] ~~add extends (inheritance)~~
     - [x] add mixins (functions)
 
 ### General (DONE)
@@ -44,7 +44,6 @@
 - [x] make the whole thing responsive (bs5)
 - [x] make at least one thing responsive with media queries for the sake of it
 - [x] upload into a github repo
-    - [ ] make a readme.md that explains the project and intention
 - [x] make a favicon
 - [x] make a logo
 - [x] make a footer
