@@ -18,14 +18,14 @@
   - [x] Implementar la lógica básica del simulador.
   - [x] Asegurar que el flujo de trabajo del script sea coherente y efectivo.
 
-- [ ] **Identificar el flujo de trabajo del script**
+- [x] **Identificar el flujo de trabajo del script**
   - [ ] Mapear el flujo de captura de entradas ingresadas por el usuario.
-  - [ ] Establecer el procesamiento esencial del simulador.
+  - [x] Establecer el procesamiento esencial del simulador.
   - [x] Implementar la notificación de resultados en forma de salida.
 
-- [ ] **Formato**
-  - [ ] Crear una página HTML con el código fuente en JavaScript.
-  - [ ] Identificar el apellido del alumno/a en el nombre de archivo.
+- [x] **Formato**
+  - [x] Crear una página HTML con el código fuente en JavaScript.
+  - [x] Identificar el apellido del alumno/a en el nombre de archivo.
   - [ ] Comprimir el archivo y nombrarlo como "PreEntrega2+Apellido".
 
 ---
