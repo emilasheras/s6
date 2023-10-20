@@ -150,11 +150,21 @@ main section {
   grid-auto-rows: 22rem;
   gap: 8px; /* Adjust as needed */
 }
+.gallery article {
+  overflow: hidden;
+}
 .gallery img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   overflow: hidden;
+}
+.gallery .s6-fade-in {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+.gallery .s6-fade-in-loaded {
+  opacity: 1;
 }
 @media screen and (min-width: 576px) {
   .gallery .img-tall {
