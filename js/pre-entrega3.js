@@ -1,108 +1,26 @@
 /**
  * This js file is based on the "@app/js/pre-entrega2.js" file from the first deliverable.
  * 
- * The objective with this one is to touch up a little bit of the DOM with the primitives for querying the Elements.
- * 1. The next objective would be to make it fully interactable from the page only with click events.
+ * The objectives for this pre-entrega are listed in the pre-entregas folder, on its corresponding file.
  */
+import { imageData } from "./image-data.js";
 
 // variable definitions
-let cart = [];
+let cart = []; //! Deprecated
 const postImgClass = 's6-post-image';
 let products = [];
-let imageData = [
-    {
-        "alt": "post image inside gallery",
-        "src": "../assets/images/posts/grok_cluster_TRIMMED.png",
-        "classes": ["s6-post-image", "s6-filter-brightness-75", "rounded-3", "img-tall", "img-wide"]
-    },
-    {
-        "alt": "post image inside gallery",
-        "src": "../assets/images/posts/cannon-fodder.png",
-        "classes": ["s6-post-image", "s6-filter-brightness-75", "rounded-3"]
-    },
-    {
-        "alt": "post image inside gallery",
-        "src": "../assets/images/posts/cursed_coin.png",
-        "classes": ["s6-post-image", "s6-filter-brightness-75", "rounded-3"]
-    },
-    {
-        "alt": "post image inside gallery",
-        "src": "../assets/images/posts/dandaliens.png",
-        "classes": ["s6-post-image", "s6-filter-brightness-75", "rounded-3"]
-    },
-    {
-        "alt": "post image inside gallery",
-        "src": "../assets/images/posts/eye.png",
-        "classes": ["s6-post-image", "s6-filter-brightness-75", "rounded-3"]
-    },
-    {
-        "alt": "post image inside gallery",
-        "src": "../assets/images/posts/flower-front.png",
-        "classes": ["s6-post-image", "s6-filter-brightness-75", "rounded-3"]
-    },
-    {
-        "alt": "post image inside gallery",
-        "src": "../assets/images/posts/flower-side.png",
-        "classes": ["s6-post-image", "s6-filter-brightness-75", "rounded-3"]
-    },
-    {
-        "alt": "post image inside gallery",
-        "src": "../assets/images/posts/gold_medallion.png",
-        "classes": ["s6-post-image", "s6-filter-brightness-75", "rounded-3"]
-    },
-    {
-        "alt": "post image inside gallery",
-        "src": "../assets/images/posts/grok_cluster_LEFT.png",
-        "classes": ["s6-post-image", "s6-filter-brightness-75", "rounded-3", "img-tall"]
-    },
-    {
-        "alt": "post image inside gallery",
-        "src": "../assets/images/posts/grok_cluster_RIGHT.png",
-        "classes": ["s6-post-image", "s6-filter-brightness-75", "rounded-3", "img-tall"]
-    },
-    {
-        "alt": "post image inside gallery",
-        "src": "../assets/images/posts/lost_spirit.png",
-        "classes": ["s6-post-image", "s6-filter-brightness-75", "rounded-3"]
-    },
-    {
-        "alt": "post image inside gallery",
-        "src": "../assets/images/posts/tea-fantasy.png",
-        "classes": ["s6-post-image", "s6-filter-brightness-75", "rounded-3"]
-    },
-    {
-        "alt": "post image inside gallery",
-        "src": "../assets/images/posts/trumpeting_ecstasy.png",
-        "classes": ["s6-post-image", "s6-filter-brightness-75", "rounded-3"]
-    },
-    {
-        "alt": "post image inside gallery",
-        "src": "../assets/images/posts/pendant01.PNG",
-        "classes": ["s6-post-image", "s6-filter-brightness-75", "rounded-3"]
-    },
-    {
-        "alt": "post image inside gallery",
-        "src": "../assets/images/posts/pendant.png",
-        "classes": ["s6-post-image", "s6-filter-brightness-75", "rounded-3"]
-    }
-];
+
 
 // init function: where everything happens
 function init() {
-    console.log('pre-entrega2.js initialized');
-
-    // load the products dynamically this time
-    loadProductsFromDOM();
-    
-    // user interaction loop
-    // runCartLoop(); //!
+    console.log('init() run');
 
     populateGalleryPosts();
-    // ... logic here
 
-    //finish
+    // ... logic here
 }
 
+//! Deprecated
 /**
  * maps the given cart of articles to a simple string , using the given separator as a string too.
  * @returns string[]
@@ -111,6 +29,7 @@ function mapToPromptString(articlesArray, separator = "\n") {
     return articlesArray.map(item => `ID: ${item.productId} - ${item.article} ($${item.price})`).join(separator);
 }
 
+//! Deprecated
 /**
  * adds an article to the current cart
  * @param productId 
@@ -119,6 +38,8 @@ function addToCart(productId) {
     const product = products.find(p => p.productId === productId);
     cart.push(product);
 }
+
+//! Deprecated
 /**
  * removes an article from the current cart based object matching and splice().
  */
@@ -127,6 +48,7 @@ function removeFromCart(productId) {
     if (index > -1) cart.splice(index, 1);
 }
 
+//! Deprecated
 /**
  * returns the total price based on the current articles holding of the cart.
  */
@@ -134,6 +56,7 @@ function calculateTotal() {
     return cart.reduce((acc, item) => acc + item.price, 0);
 }
 
+//! Deprecated
 /**
  * returns an array with the strings of the possible operations
  * based on the current state of the `cart` and `products` arrays
@@ -158,6 +81,7 @@ function getPossibleOperations(){
     return operations;
 }
 
+//! Deprecated
 function loadProductsFromDOM() {
     // get all images with the identificator class
     const images = document.getElementsByClassName(postImgClass);
@@ -175,6 +99,7 @@ function loadProductsFromDOM() {
     }
 }
 
+//! Deprecated
 function runCartLoop(){
     // map the products array into a string for the initial alert
     const availableProducts = mapToPromptString(products);
