@@ -3,7 +3,7 @@
  * 
  * The objectives for this pre-entrega are listed in the pre-entregas folder, on its corresponding file.
  */
-import { imageData } from "./image-data.js";
+import { imageData } from "./data/image-data.js";//! Deprecated
 
 // variable definitions
 let cart = []; //! Deprecated
@@ -11,10 +11,12 @@ const postImgClass = 's6-post-image';
 let products = [];
 
 
+//! Deprecated. now runs in s6-gallery.js with ES6 Modules
 // init function: where everything happens
 function init() {
     console.log('init() run');
 
+    //! Deprecated
     populateGalleryPosts();
 
     // ... logic here
@@ -128,7 +130,7 @@ function runCartLoop(){
         alert(`---SUMMARY---\nTotal Price: $${calculateTotal()} \nCurrent Cart: \n${mapToPromptString(cart)}`);
     }
 }
-
+//! Deprecated
 function populateGalleryPosts() {
     const galleryDiv = document.querySelector('.gallery');
     imageData.forEach((img, index) => {
