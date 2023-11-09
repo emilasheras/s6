@@ -1,5 +1,11 @@
 # Projects' to-do list
 
+### 08-11-2023 ✨ Final, Extras ⇈
+- [ ] use JSON and localStorage:setItem(),getItem() methods
+*e.g: const userData = JSON.parse(localStorage.getItem('userTurn'));*
+- [ ] make use of addEventListener for something more like mouse-clicks or scrolling-into-view fade-in's
+- [ ] make a simplified cart that could add images based on their metadata price-tags
+
 ### Things that need to be done before the last deliverable.
 - [x] change "NDX" to "IDX" in the navbar of all pages
 - [x] finish the implementation for the "Nexus" page

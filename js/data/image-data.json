@@ -1,4 +1,4 @@
-export const imageData = [
+[
     {
         "alt": "post image inside gallery",
         "src": "../assets/images/posts/grok_cluster_TRIMMED.png",
@@ -74,4 +74,4 @@ export const imageData = [
         "src": "../assets/images/posts/pendant.png",
         "classes": ["s6-post-image", "s6-filter-brightness-75", "rounded-3"]
     }
-];
+]
