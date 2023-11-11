@@ -1,9 +1,8 @@
 function init() {
-    console.log('initialized js');
+    console.log('s6 Initialized');
     $("p").each(function (index) {
         fadeInTextInElement(index, $(this));
     });
-
 }
 
 function fadeInTextInElement(index, paragraph) {
@@ -13,7 +12,6 @@ function fadeInTextInElement(index, paragraph) {
     // Clear the original content of the paragraph
     paragraph.text('');
 
-    // const localDelay = getRandomValue(15, 30);
     const localDelay = getRandomValue(1, 8);
     // Iterate through each character in the text content
     for (let i = 0; i < textContent.length; i++) {
@@ -43,9 +41,7 @@ function runProbability(pct) {
     // Generate a random number between 0 and 100 (inclusive of 0, exclusive of 100)
     const randomNum = Math.random() * 100;
 
-    // Check if the random number is less than 2 (2 percent chance)
     if (randomNum < pct) {
-        console.log("Action executed with 2 percent chance.");
         return true;
     } else {
         // console.log("Action not executed.");

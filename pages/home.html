@@ -41,54 +41,22 @@
 
 	<!-- add custom js -->
 	<script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-	<script defer src="./../js/s6.js"></script>
+	<script defer src="./../js/libs/s6-logger.js" type="module"></script> <!-- Logs Override -->
+	<script defer src="./../js/s6-navigation.js" type="module"></script> <!-- Navbar -->
+	<script defer src="./../js/s6.js"></script> <!-- Text Animations -->
 </head>
 
 <body>
-	<!-- header -->
+	<!-- header --> 
 	<header>
-		<nav class="navbar-vertical">
-			<!-- logo img -->
-			<div class="logo-container">
-				<a href="./../index.html">
-					<img src="./../assets/images/logo/sigil-clear.png"  alt="syx6 logo image" class="s6-filter-brightness-75" />
-				</a>
-			</div>
-			<!-- the actual links -->
-			<ul>
-				<li><a href="./../index.html" class="s6-encapsulator">idx</a></li>
-				<li><a href="home.html" class="s6-encapsulator">hme</a></li>
-				<li><a href="gallery.html" class="s6-encapsulator">gll</a></li>
-				<li><a href="nexus.html" class="s6-encapsulator">nxs</a></li>
-				<li><a href="shop.html" class="s6-encapsulator">shp</a></li>
-				<li><a href="about.html" class="s6-encapsulator">abt</a></li>
-			</ul>
-			<!-- more options button -->
-			<label class="options-button-container" title="options">
-				<input class="s6-invisible-input" type="checkbox"/>
-				<div class="line"></div>
-				<div class="line"></div>
-				<div class="line"></div>
-			</label>
-		</nav>
+		<slot id="navbar"></slot>
 	</header>
 
+	<!-- main -->
 	<main>
-		<!-- searchbar -->
-		<section class="row">
-			<div class="col-12">
-				<div class="section-seachbar">
-					<div class="searchbar-container">
-						<span class="material-symbols-outlined search-icon">Search</span>
-						<input type="text" placeholder="search [title]..." />
-						<!-- here should be a badge that suggest the hotkey for the searchbar -->
-						<span class="badge s6-bg-accent">CTRL K</span>
-					</div>
-				</div>
-			</div>
-		</section>
-		<hr>
-		<!-- section that will be the main content -->
+		<slot id="searchbar"></slot>
+		
+		<!-- main content -->
 		<section class="row">
 			<!-- article 1: highlights -->
 			<article class="col-sm-12 col-md-6 col-lg-5 col-xl-4">
@@ -173,10 +141,10 @@
 			</article>
 		</section>
 	</main>
+
 	<!-- footer -->
 	<footer class="text-center">
-		<hr />
-		<p>© There is no copyright but the right to copy</p>
+		<slot id="footer"></slot>
 	</footer>
 </body>
 
