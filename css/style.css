@@ -135,11 +135,59 @@ main {
 main section {
   margin: 1rem 0;
 }
+main .s6-layout-fluid {
+  margin: 0;
+  padding: 0;
+}
+main .s6-layout-read {
+  max-width: 940px;
+  margin: auto;
+  padding: 0;
+}
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  main .s6-layout-fluid {
+    margin: 0;
+    padding: 0;
+  }
+  main .s6-layout-read {
+    max-width: 550px;
+    margin: auto;
+    padding: 0;
+  }
+}
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  main .s6-layout-fluid {
+    margin: 0;
+    padding: 0;
+  }
+  main .s6-layout-read {
+    max-width: 450px;
+    margin: auto;
+    padding: 0;
+  }
+}
+@media screen and (max-width: 576px) {
+  main {
+    grid-area: main;
+    margin-left: 0;
+    margin-bottom: 2rem;
+    padding: 1rem;
+  }
+  main .s6-layout-fluid {
+    margin: 0;
+    padding: 0;
+  }
+  main .s6-layout-read {
+    max-width: 350px;
+    margin: auto;
+    padding: 0;
+  }
+}
 @media screen and (max-width: 768px) {
   main {
     grid-area: main;
     margin-left: 0;
-    margin-bottom: 2rem; /* todo: change this for a variable approach based on the navbar height */
+    margin-bottom: 2rem;
     padding: 1rem;
   }
 }
